@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>chillcloud — the pillow that stays cool</title>
+<style>
+  :root{
+    --teal-dark:#12776f;
+    --teal:#1a9e93;
+    --teal-light:#4fd3c4;
+    --bg:#f7f6f2;
+    --ink:#0f2b28;
+    --ink-soft:#4a6360;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:28px 0;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:300;letter-spacing:0.5px;}
+  .logo svg{height:28px;width:auto;}
+  nav a{margin-left:28px;font-size:14px;text-decoration:none;color:var(--ink-soft);}
+
+  .hero{
+    text-align:center;
+    padding:60px 0 40px;
+  }
+  .hero svg.cloud-big{height:110px;width:auto;margin-bottom:10px;}
+  .hero h1{
+    font-size:52px;font-weight:200;margin:0 0 14px;letter-spacing:0.5px;
+    background:linear-gradient(90deg,var(--teal-dark),var(--teal-light));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p{
+    font-size:18px;color:var(--ink-soft);max-width:520px;margin:0 auto 32px;line-height:1.5;
+  }
+  .cta{
+    display:inline-block;
+    background:linear-gradient(90deg,var(--teal-dark),var(--teal));
+    color:#fff;padding:16px 40px;border-radius:40px;
+    font-size:16px;text-decoration:none;font-weight:500;
+    box-shadow:0 8px 20px rgba(26,158,147,0.25);
+    border:none;cursor:pointer;
+  }
+  .cta:hover{opacity:0.92;}
+  .price-note{margin-top:12px;font-size:13px;color:var(--ink-soft);}
+
+  .benefits{
+    padding:60px 0;
+    border-top:1px solid #e7e4dc;
+  }
+  .benefits h2{
+    text-align:center;font-weight:300;font-size:28px;margin-bottom:40px;color:var(--ink);
+  }
+  .grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .card{
+    background:var(--card);border-radius:16px;padding:32px 24px;
+    text-align:center;box-shadow:0 4px 16px rgba(15,43,40,0.05);
+  }
+  .card .icon{font-size:32px;margin-bottom:14px;}
+  .card h3{font-size:17px;margin:0 0 8px;font-weight:600;color:var(--teal-dark);}
+  .card p{font-size:14px;color:var(--ink-soft);line-height:1.5;margin:0;}
+
+  .banner{
+    background:linear-gradient(90deg,var(--teal-dark),var(--teal));
+    color:#fff;text-align:center;padding:48px 24px;border-radius:20px;
+    margin:60px 0;
+  }
+  .banner h2{font-weight:300;font-size:26px;margin:0 0 10px;}
+  .banner p{margin:0 0 24px;opacity:0.9;}
+  .banner .cta{background:#fff;color:var(--teal-dark);box-shadow:none;}
+
+  footer{
+    text-align:center;padding:40px 0;color:var(--ink-soft);font-size:13px;
+    border-top:1px solid #e7e4dc;
+  }
+
+  @media (max-width:720px){
+    .hero h1{font-size:36px;}
+    .grid{grid-template-columns:1fr;}
+    nav{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 40 a15 15 0 0 1 0-30 a15 15 0 0 1 2 0 a20 20 0 0 1 39 8 a14 14 0 0 1 -3 27 z"
+              fill="none" stroke="url(#g)" stroke-width="4"/>
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#12776f"/>
+            <stop offset="100%" stop-color="#4fd3c4"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      chillcloud
+    </div>
+    <nav>
+      <a href="#benefits">Benefits</a>
+      <a href="#buy">Buy now</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <svg class="cloud-big" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 40 a15 15 0 0 1 0-30 a15 15 0 0 1 2 0 a20 20 0 0 1 39 8 a14 14 0 0 1 -3 27 z"
+            fill="none" stroke="url(#g2)" stroke-width="4"/>
+      <defs>
+        <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#12776f"/>
+          <stop offset="100%" stop-color="#4fd3c4"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <h1>Sleep on a cloud. Wake up cool.</h1>
+    <p>chillcloud's cooling pillow pulls heat away all night, so you fall asleep faster and stay asleep longer — no more flipping to the "cold side."</p>
+    <a href="#buy" class="cta">Get your chillcloud pillow</a>
+  </section>
+
+  <section class="benefits" id="benefits">
+    <h2>Why people switch to chillcloud</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">❄️</div>
+        <h3>Stays cool all night</h3>
+        <p>Advanced cooling gel infusion draws heat away from your head and neck, so the surface never warms up like a normal pillow.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧵</div>
+        <h3>Breathable, soft cover</h3>
+        <p>A moisture-wicking, hypoallergenic fabric keeps air moving and skin dry, even on hot nights.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🦴</div>
+        <h3>Supports neck & spine</h3>
+        <p>Medium-firm memory foam contours to your shape without going flat, keeping your neck aligned all night.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner" id="buy">
+    <h2>Ready for your best night's sleep?</h2>
+    <p>Free shipping. 30-night trial.</p>
+    <a href="#" class="cta" id="buyButton">Buy now — secure checkout</a>
+    <div class="price-note">Payment powered by Stripe</div>
+  </section>
+
+  <footer>
+    &copy; 2026 chillcloud. All rights reserved.
+  </footer>
+</div>
+
+<script>
+  /* =========================================================
+     STRIPE — PLUG IN HERE
+     =========================================================
+     Simplest option (no backend, no code): create a Stripe
+     Payment Link in your Stripe Dashboard
+     (Dashboard → Payment links → New), then paste it below.
+  */
+  const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/dRmaEQ10J31v8PU9Yb7bW00";
+
+  document.getElementById('buyButton').addEventListener('click', function(e){
+    e.preventDefault();
+    window.location.href = STRIPE_PAYMENT_LINK;
+  });
+
+  /* =========================================================
+     CJ DROPSHIPPING — WHY IT CAN'T LIVE HERE
+     =========================================================
+     CJ Dropshipping has no client-side checkout widget — it's
+     a fulfillment API that a SERVER calls after payment
+     succeeds. A static page like this one has no server, so
+     it can't safely hold API keys or place orders.
+
+     The real flow (once you build/replace this page) is:
+
+     1. Customer pays via Stripe (Payment Link or Checkout).
+     2. Stripe sends a `checkout.session.completed` webhook
+        to YOUR server.
+     3. Your server takes the shipping address + product from
+        that event and calls CJ Dropshipping's Order API
+        (POST /shopping/order/createOrderV2) to create the
+        fulfillment order.
+     4. CJ ships the product and returns tracking info, which
+        your server can email to the customer or show on an
+        order-status page.
+
+     None of this belongs in browser JavaScript (your CJ API
+     key would be exposed to every visitor). It's a small
+     Node/Python endpoint — happy to build that when you're
+     ready to wire up the full version of the site.
+  */
+</script>
+
+</body>
+</html>
